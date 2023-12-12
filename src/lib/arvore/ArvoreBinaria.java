@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import app.Livro;
+
 
 public class ArvoreBinaria<T> implements IArvoreBinaria<T> {
     

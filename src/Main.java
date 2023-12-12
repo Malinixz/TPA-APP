@@ -13,14 +13,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Comparator<Livro> comparador = new LivroComparator();
         ArvoreBinaria arvoreLivros = new ArvoreBinaria(comparador);
-        Grafo grafoLivros = new Grafo(0);
+        Grafo grafoLivros = new Grafo();
 
         while (true) {
             System.out.println("1. Adicionar Livro");
             System.out.println("2. Pesquisar Livro");
             System.out.println("3. Remover Livro");
             System.out.println("4. Listar Livros");
-            System.out.println("5. Sair");
+            System.out.println("5. Ordem de Leitura Indicada");
+            System.out.println("6. Verificar Ciclos");
+            System.out.println("7. Criar Dependência");
+            System.out.println("8. Sair");
             System.out.print("Escolha uma opção: ");
 
             int escolha = scanner.nextInt();
@@ -34,13 +37,22 @@ public class Main {
                     pesquisarLivro(scanner, arvoreLivros);
                     break;
                 case 3:
-                    removerLivro(scanner, arvoreLivros);
+                    removerLivro(scanner, arvoreLivros, grafoLivros);
                     break;
                 case 4:
                     listarLivros(arvoreLivros);
                     break;
                 case 5:
-                    System.out.println("Saindo do programa. Até mais!");
+                    ordemLeitura(grafoLivros);
+                    break;
+                case 6:
+                    verificaCiclos(grafoLivros);
+                    break;
+                case 7:
+                    criaDependencia(scanner, arvoreLivros, grafoLivros);
+                    break;
+                case 8:
+                    System.out.println("Programa Finalizado.");
                     System.exit(0);
                     break;
                 default:
