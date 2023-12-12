@@ -27,7 +27,7 @@ public class ArvoreBinaria<T> implements IArvoreBinaria<T> {
         }else{
             this.setAtual(this.getRaiz());
             while(true){
-                if (getComparador().compare(novoNo.getValor(), getAtual().getValor()) == -1){
+                if (getComparador().compare(novoNo.getValor(), getAtual().getValor()) <= -1){
                     if (getAtual().getFilhoEsquerda() != null){
                         this.setAtual(getAtual().getFilhoEsquerda());
                     }else{
@@ -240,15 +240,15 @@ public class ArvoreBinaria<T> implements IArvoreBinaria<T> {
         caminharEmOrdemRecursivamente(noAtual.getFilhoDireita(), resultado);
     }
 
-    public void percorrerInOrder(No raiz) {
-        if (raiz == null) {
-            return;
-        }
+    // public void percorrerInOrder(No raiz) {
+    //     if (raiz == null) {
+    //         return;
+    //     }
 
-        percorrerInOrder(raiz.getFilhoEsquerda());
-        System.out.print(raiz.getValor() + " ");
-        percorrerInOrder(raiz.getFilhoDireita());
-    }
+    //     percorrerInOrder(raiz.getFilhoEsquerda());
+    //     System.out.print(raiz.getValor() + " ");
+    //     percorrerInOrder(raiz.getFilhoDireita());
+    // }
 
 
 
